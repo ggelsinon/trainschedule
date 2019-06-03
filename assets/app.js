@@ -56,14 +56,14 @@ $("#add-train-btn").on("click", function(event) {
 });
 
 // 3. Create Firebase event for adding train to the database and a row in the html when a user adds an entry
-database.ref().on("child_added", function(childSnapshot) {
-  console.log(childSnapshot.val());
+database.ref().on("child_added", function(snapshot) {
+  console.log(snapshot.val());
 
   // Store everything into a variable.
-  var trnName = childSnapshot.val().name;
-  var trndestination = childSnapshot.val().destination;
-  var trnStart = childSnapshot.val().start;
-  var trnfrequency = childSnapshot.val().frequency;
+  var trnName = snapshot.val().name;
+  var trndestination = snapshot.val().destination;
+  var trnStart = snapshot.val().start;
+  var trnfrequency = snapshot.val().frequency;
 
   // train Info
   console.log(trnName);
